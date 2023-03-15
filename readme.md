@@ -1,4 +1,4 @@
-# DHT30 sensor on Pi pico W with report to Domoticz using Micropython
+# SHT30 sensor on Pi pico W with report to Domoticz using Micropython
 
 ---
 
