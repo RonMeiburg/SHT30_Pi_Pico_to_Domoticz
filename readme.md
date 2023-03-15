@@ -18,7 +18,7 @@ Use examples liberally, and show the expected output if you can. It's helpful to
 
 ## SHT30 Technical background
 
-To fully understand the SHT30 search for the Sensiron SHT3x-DIS [documentation](https://eu.mouser.com/pdfdocs/SHT3x-DIS.pdf) (The manufacturer may have moved the file location). For our purpose we only need the command syntax for a few commands, notably making and sending a single measurement. The documentation lists many more. Once you know  the principle, then using any of the other commands is straightforward.
+To fully understand the SHT30 search for the Sensiron SHT3x-DIS check the pdf-documentation in this repository. For our purpose we only need the command syntax for a few commands, notably making and sending a single measurement. The documentation lists many more. Once you know  the principle, then using any of the other commands is straightforward.
 
 The manufacturers documentation indicates that sending 0x2C06 will trigger the sensor toe perform a measurement. The i2c address is standard 0x44 for the DHT30. Ignore the 'high repeatability with clock stretching' for this simple case. Once the measurement is completed, the sensor will return 6 bytes, two data-bytes and a crc-byte for the temperature, followed by two data-bytes and crc-byte for the relative humidity.
 
