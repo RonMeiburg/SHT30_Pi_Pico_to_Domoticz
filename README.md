@@ -40,7 +40,7 @@ Assignment of GPIO pins to the data (sda) and clock (clk) lines can be done with
 
 ## Example code for communicating with the SHT30
 
-If you want to get started and check whether everything is wired up correctly, it should suffice to copy paste the code below and check you get a return, albeit gibberish without decoding, from the DHT30. We use pins 16 and 17 for i2cbus 0, but it should work with suitable pair (check the pico pinning documentation) of i2cbus pins.
+If you want to get started and check whether everything is wired up correctly, it should suffice to copy paste the code below and check you get a return, albeit gibberish without decoding, from the SHT30. We use pins 16 and 17 for i2cbus 0, but it should work with suitable pair (check the pico pinning documentation) of i2cbus pins.
 
 ```
 import time
@@ -65,7 +65,7 @@ while True:
     # single measurement with high repeatability
     i2c.writeto(0x44,b'\x2C\x06') 
     time.sleep_ms(10)
-    # DHT30 will send 6 bytes as reply
+    # SHT30 will send 6 bytes as reply
     data = i2c.readfrom(0x44,6)
     time.sleep(1)
     # Without decoding the following will print gibberish,  
@@ -113,7 +113,7 @@ There appear to be no obvious extensions to this simple functionality, hence the
 
 ## Credits
 
-[R.Sanchez](https://github.com/rsc1975/micropython-sht30/blob/master/sht30.py) wrote an implementation for accessing the SHT-30 for a totally different, and now obsolete(?), board that proved a useful insight. If anything it was a clear indication that a simple approach with Micropython was possible. In fact for the Pico it required even less code to communicate with the DHT30.
+[R.Sanchez](https://github.com/rsc1975/micropython-sht30/blob/master/sht30.py) wrote an implementation for accessing the SHT-30 for a totally different, and now obsolete(?), board that proved a useful insight. If anything it was a clear indication that a simple approach with Micropython was possible. In fact for the Pico it required even less code to communicate with the SHT30.
 
 ## Project status
 
